@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Envio de Mensagem</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1>Envie sua Mensagem</h1>
+  <form id="mensagemForm">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
+    </div>
+    <div class="form-group">
+      <label for="mensagem">Mensagem:</label>
+      <textarea class="form-control" id="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="button" class="btn btn-secondary" id="limparBtn">Limpar</button>
+    <a href="#" class="btn btn-secondary" id="voltarBtn">Voltar</a>
+  </form>
+  <div class="mt-3" id="feedback" style="display: none;"></div>
+</div>
+
+<script>
+  document.getElementById("mensagemForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    // Simulando o envio da mensagem
+    setTimeout(function() {
+      document.getElementById("feedback").innerHTML = "Mensagem enviada com sucesso!";
+      document.getElementById("feedback").style.display = "block";
+    }, 1000);
+  });
+  
+  document.getElementById("limparBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    
+    document.getElementById("email").value = "";
+    document.getElementById("mensagem").value = "";
+    document.getElementById("feedback").style.display = "none";
+  });
+  
+  document.getElementById("voltarBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    
+    // Redirecionar para a página anterior ou outra página
+    // window.location.href = "pagina-anterior.html";
+  });
+</script>
+
+</body>
+</html>

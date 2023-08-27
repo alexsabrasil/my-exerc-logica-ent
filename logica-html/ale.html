@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Somador</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Somador de Números</h1>
+  <input type="number" id="num1" placeholder="Digite o primeiro número">
+  <input type="number" id="num2" placeholder="Digite o segundo número">
+  <button onclick="sum()">Somar</button>
+  <button onclick="clearResult()">Limpar</button>
+  <h2>Resultado: <span id="result">0</span></h2>
+
+  <script>
+    function sum() {
+      const num1 = parseInt(document.getElementById('num1').value);
+      const num2 = parseInt(document.getElementById('num2').value);
+      const result = num1 + num2;
+      document.getElementById('result').textContent = result;
+    }
+
+    function clearResult() {
+      document.getElementById('num1').value = '';
+      document.getElementById('num2').value = '';
+      document.getElementById('result').textContent = '0';
+    }
+  </script>
+</body>
+</html>

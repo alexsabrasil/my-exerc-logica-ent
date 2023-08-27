@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Soma</title>
+</head>
+<body>
+  <h1>Calculadora de Soma</h1>
+  
+  <label for="numero1">Número 1:</label>
+  <input type="number" id="numero1"><br>
+
+  <label for="numero2">Número 2:</label>
+  <input type="number" id="numero2"><br>
+
+  <button id="calcular">Calcular Soma</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    const calcularButton = document.getElementById('calcular');
+    const resultadoP = document.getElementById('resultado');
+
+    calcularButton.addEventListener('click', () => {
+      const numero1 = parseFloat(document.getElementById('numero1').value);
+      const numero2 = parseFloat(document.getElementById('numero2').value);
+
+      const soma = numero1 + numero2;
+
+      resultadoP.textContent = `A soma dos números é: ${soma}`;
+    });
+  </script>
+</body>
+</html>
